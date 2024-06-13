@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 /* 
@@ -23,6 +24,8 @@ div {
     display: grid;
     align-content: start;
     grid-gap: 40px;
+
+    padding: 40px 20px;
 }
 
 
@@ -31,9 +34,13 @@ div {
     grid-auto-flow: column;
     align-items: center;
     margin: 0;
-    gap: 10px; 
+    gap: 20px; 
 
     display: flex;
+}
+
+.dashboard-item-container  {
+    padding: 15px;
 }
 
 .fa-th-large {
@@ -41,13 +48,20 @@ div {
     width: auto;
 }
 
+.fa-home, .fa-user, .fa-comment, .fa-history, .fa-tasks, .fa-users,
+.fa-cog, .fa-question, .fa-user-secret {
+    font-size: 20px;
+}
+
 .header {
-    background-color: bisque;
+    background-color: white;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 
     display: grid;
     grid-template-rows: 1fr 1fr;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1;
 }
 
 .header-top-container, .header-bot-container {
@@ -60,20 +74,40 @@ div {
 
 .header-top-right-container, .header-top-left-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
+.header-top-right-container {
+    gap: 20px;
+    justify-content: center;
+}
+
+.header-top-left-container, .header-bot-left-container {
+    padding-left: 40px;
+}
+
+.btn {
+    border: none;
+}
+
+.fa-search {
+    font-size: 20px;
+}
+
 .input {
+    border-radius: 20px;
+    height: 30px;
+    border: 1px solid rgba(226,232,240,255);
+    background-color: rgba(226,232,240,255);
+
     width: 90%;
-    /* box-sizing: border-box; Ensures padding and border are included in the element's total width */
-  }
+}
+
 
 .header-bot-left-container {
     display: flex;
-    gap: 10px;
-    justify-content: start;
+    gap: 25px;
     align-items: center;
 }
 
@@ -81,27 +115,37 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 35px;
+}
+
+.blue-btn {
+    background-color: rgba(25,146,212,255);
+    color: white;
+    padding: 10px 30px;
+    border: 1px solid rgba(25,146,212,255);
+    border-radius: 20px;
+    font-size: 20px;
 }
 
 .content {
-    background-color: grey;
+    background-color: rgba(226,232,240,255);
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 
     display: grid;
     grid-template-columns: 8fr 3fr;
 
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .projects {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
+
 }
 
 .your-projects-text{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .project-item-container{
@@ -115,11 +159,19 @@ div {
 .project {
     background-color: white;
     width: 400px;
-    padding:  20px;
+    padding: 40px 20px;
+
+    border-left: 10px solid orange;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .title, .main-text {
     padding: 10px;
+}
+
+.main-text {
+    color: #7d7d7d;
 }
 
 .icons {
@@ -128,35 +180,75 @@ div {
     gap: 15px;
 }
 
+.user-1, .user-2, .user-3, .user-0 {
+    width: 35px;
+}
+
+.user-1.big {
+    width: 70px;
+}
+
+.star, .eye, .share {
+    width: 30px;
+}
+
+.fa-bell {
+    font-size: 30px;
+}
+
 .announcements-text {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .announcement-item-container {
     background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .announcement {
     padding: 10px;
 }
 
+.announcement-item-container {
+    padding: 10px;
+}
+
+.announcement-item-container .announcement:not(:last-child) .main-text {
+    border-bottom: 1px solid grey; 
+}
+
 
 .trending {
     margin-top: 20px;
+
 }
 
 .trending-item-text {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .trending-item-container {
     background-color: white;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 10px;
 }
 
 .trending-item {
     padding: 15px;
     display: flex;
-    gap: 10px;
+    gap: 25px;
+    
+}
+
+.trending-item .text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.handle-text {
+    color: #7d7d7d;
 }
